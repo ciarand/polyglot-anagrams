@@ -1,0 +1,30 @@
+CPSC411 – Assignment 2
+======================
+
+[quote]
+____
+Write an Objective-C or C program that assists you in answering the following
+question.
+
+Given the file `CS411SampleCode/sample_data/words.zip` in the course GitHub
+repository, find all the anagrams. What are the words that form the largest set
+of anagrams given the words in the file? How long does your program take to
+calculate the answer in seconds? What kind of CPU are you using?
+
+(If your program takes longer than 5 seconds, then please rewrite your
+program.)
+
+Instructions will be posted towards the due date regarding how to submit your
+answer.
+
+If your answer is correct and the code executes correctly, you will receive
+full credit. If your answer is incorrect you will receive no credit. If your
+code does not execute correctly or if nothing is submitted you will receive no
+credit.
+
+There are 100 points possible.
+____
+
+License
+-------
+BSD, check the LICENSE file.
