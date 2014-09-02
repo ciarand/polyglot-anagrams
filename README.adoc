@@ -25,6 +25,32 @@ credit.
 There are 100 points possible.
 ____
 
+Different versions
+------------------
+For fun I created a couple of different versions in different languages.
+
+Go:
+
+----
+The largest number of anagrams is 11
+[angor argon goran grano groan nagor Orang orang organ rogan Ronga]
+
+real    0m0.371s
+user    0m0.339s
+sys     0m0.028s
+----
+
+PHP:
+
+----
+The largest number of anagrams is 11
+[angor argon goran grano groan nagor Orang orang organ rogan Ronga]
+
+real    0m8.760s
+user    0m8.594s
+sys     0m0.163s
+----
+
 License
 -------
 BSD, check the LICENSE file.

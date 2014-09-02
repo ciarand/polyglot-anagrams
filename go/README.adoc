@@ -1,0 +1,4 @@
+Go implementation
+=================
+
+This is my Go implementation of the Anagram finder.
