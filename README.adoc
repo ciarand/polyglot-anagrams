@@ -29,26 +29,15 @@ Different versions
 ------------------
 For fun I created a couple of different versions in different languages.
 
-Go:
-
 ----
-The largest number of anagrams is 11
-[angor argon goran grano groan nagor Orang orang organ rogan Ronga]
+time ./go/anagram ./words
+        0.51 real         0.48 user         0.03 sys
 
-real    0m0.371s
-user    0m0.339s
-sys     0m0.028s
-----
+time php ./php/anagram.php ./words
+       12.48 real        12.24 user         0.21 sys
 
-PHP:
-
-----
-The largest number of anagrams is 11
-[angor argon goran grano groan nagor Orang orang organ rogan Ronga]
-
-real    0m8.760s
-user    0m8.594s
-sys     0m0.163s
+time node ./node/anagrams.js ./words
+        2.56 real         2.48 user         0.10 sys
 ----
 
 License
