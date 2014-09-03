@@ -1,0 +1,4 @@
+[
+  "-scheme", "anagrams",
+  "-configuration", "Release"
+]
