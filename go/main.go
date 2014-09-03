@@ -5,9 +5,12 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+	"time"
 )
 
 func main() {
+	start := time.Now()
+
 	words := getWordsFromFile(getFileFromArgs())
 
 	c := newContainer(len(words))
@@ -16,7 +19,7 @@ func main() {
 			continue
 		}
 
-		c.append(w)
+		c.addWord(w)
 	}
 
 	// print the summary
@@ -27,6 +30,10 @@ func main() {
 			fmt.Println(w)
 		}
 	}
+
+	total := time.Since(start)
+
+	fmt.Printf("took %s\n", total.String())
 }
 
 func getFileFromArgs() string {

@@ -13,7 +13,7 @@ func newContainer(l int) *container {
 	}
 }
 
-func (c *container) append(word string) {
+func (c *container) addWord(word string) {
 	h := hash(strings.ToLower(word))
 
 	c.anagrams[h] = append(c.anagrams[h], word)
