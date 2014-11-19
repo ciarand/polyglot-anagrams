@@ -59,7 +59,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/ciarand/code/objective-c/cpsc411/a2/words"
+            argument = "/Users/ciarand/code/objective-c/cpsc411/a2-dist/words"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

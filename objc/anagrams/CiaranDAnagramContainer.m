@@ -12,12 +12,14 @@
 @implementation CiaranDAnagramContainer
 
 - (id) initWithCapacity:(NSInteger)capacity {
+    self = [super init];
+
     anagrams = [[NSMutableDictionary alloc] initWithCapacity:capacity];
 
     return self;
 }
 
-- (NSMutableDictionary*) anagrams {
+- (NSDictionary*) anagrams {
     return anagrams;
 }
 
@@ -37,7 +39,7 @@
 
 // adds a word to the container
 - (void) addWord:(NSString*)word {
-    NSString *hash = [Util hashWord:word];
+    NSString *hash = [Util hashWord:[word lowercaseString]];
 
     NSMutableArray *group = [anagrams valueForKey:hash];
 

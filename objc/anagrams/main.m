@@ -5,8 +5,6 @@
 //  Created by Ciaran Downey on 9/1/14.
 //  Copyright (c) 2014 Ciaran Downey. All rights reserved.
 //
-// how do I change this header? why are there 2 spaces in the beginning
-//
 
 #import <Foundation/Foundation.h>
 #import "Util.h"
@@ -24,6 +22,11 @@ int main(int argc, const char * argv[])
 
         u_long len = [lines count];
 
+        if (len < 1) {
+            printf("Problem opening provided file");
+            exit(1);
+        }
+
         CiaranDAnagramContainer *container = [[CiaranDAnagramContainer alloc] initWithCapacity:len];
 
         for (u_long i = 0; i < len; i += 1) {
@@ -31,9 +34,9 @@ int main(int argc, const char * argv[])
         }
 
         NSInteger biggestLength = [container lengthOfBiggestGroup];
-        NSLog(@"The largest number of anagrams is %ld", (long)biggestLength);
+        printf("The largest number of anagrams is %ld\n", (long)biggestLength);
 
-        NSMutableDictionary *anagrams = [container anagrams];
+        NSDictionary *anagrams = [container anagrams];
         NSMutableArray *arr;
 
         for (NSString *key in anagrams) {

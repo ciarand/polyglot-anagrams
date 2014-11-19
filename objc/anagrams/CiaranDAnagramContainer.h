@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface CiaranDAnagramContainer : NSObject {
-    NSMutableDictionary *anagrams;
+    NSDictionary *anagrams;
     NSString *biggestHash;
 }
 
 - (id) initWithCapacity:(NSInteger)capacity;
 
-- (NSMutableDictionary*) anagrams;
+- (NSDictionary*) anagrams;
 
 - (NSInteger) lengthOfBiggestGroup;
 
