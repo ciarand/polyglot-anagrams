@@ -1,6 +1,12 @@
+#!/usr/bin/env php
 <?php
 
 ini_set("memory_limit", "256M");
+
+if (extension_loaded("xdebug")) {
+    echo "You've got xdebug running, this really isn't going to be an accurate test";
+    exit(1);
+}
 
 if (count($argv) < 2) {
     echo "You need to provide a file to use as the words list" . PHP_EOL;
@@ -14,20 +20,20 @@ if ($handle === false) {
 }
 
 $container = [];
-$biggest   = "";
+$biggest   = 0;
 
-while (($line = fgets($handle, 4096)) !== false) {
+while (($line = fgets($handle, 1024)) !== false) {
     $word = trim($line);
 
-    $hash = hash_word(strtolower($word));
+    $arr = str_split(strtolower($word));
+    sort($arr);
+    $hash = implode("", $arr);
+
     if (!isset($container[$hash])) {
-        $container[$hash] = [];
-    }
-
-    $container[$hash][] = $word;
-
-    if (!isset($container[$biggest]) || count($container[$biggest]) < count($container[$hash])) {
-        $biggest = $hash;
+        $container[$hash] = [$word];
+    } else {
+        $container[$hash][] = $word;
+        $biggest = ($cap = count($container[$hash])) > $biggest ? $cap : $biggest;
     }
 }
 
@@ -38,13 +44,10 @@ if (!feof($handle)) {
 
 fclose($handle);
 
-printf("The largest number of anagrams is %d" . PHP_EOL, count($container[$biggest]));
-
-$biglist = $container[$biggest];
-$bigcount = count($biglist);
+printf("The largest number of anagrams is %d" . PHP_EOL, $biggest);
 
 foreach ($container as $list) {
-    if (count($list) < $bigcount) {
+    if (count($list) < $biggest) {
         continue;
     }
 
@@ -52,11 +55,3 @@ foreach ($container as $list) {
 }
 
 exit(0);
-
-function hash_word($str) {
-    $arr = str_split($str);
-
-    sort($arr);
-
-    return implode("", $arr);
-}
