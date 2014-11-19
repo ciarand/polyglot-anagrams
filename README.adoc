@@ -31,13 +31,13 @@ For fun I created a couple of different versions in different languages.
 
 ----
 time ./go/anagram ./words
-        0.51 real         0.48 user         0.03 sys
+        0.39 real         0.36 user         0.03 sys
 
 time php ./php/anagram.php ./words
-       12.48 real        12.24 user         0.21 sys
+        1.22 real         1.16 user         0.05 sys
 
 time node ./node/anagrams.js ./words
-        2.56 real         2.48 user         0.10 sys
+        1.79 real         1.68 user         0.09 sys
 ----
 
 License
