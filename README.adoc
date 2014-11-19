@@ -38,7 +38,15 @@ time php ./php/anagram.php ./words
 
 time node ./node/anagrams.js ./words
         1.79 real         1.68 user         0.09 sys
+
+time ./objc/artifacts/anagrams/Build/Products/Release/anagrams ./words
+        1.11 real         1.05 user         0.05 sys
 ----
+
+Remember, these benchmarks literally don't mean a thing and you shouldn't even
+think about making decisions based on them. The author is unfamiliar with
+idiomatic Objective-C or Node, so those versions are likely not as performant
+as they should be.
 
 License
 -------
